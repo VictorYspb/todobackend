@@ -13,6 +13,7 @@ services:
       target: test
 
   release:
+    image: 002348689794.dkr.ecr.us-east-1.amazonaws.com/pdcspb/todobackend:latest
     build:
       context: .
       dockerfile: dockerfile
@@ -22,6 +23,7 @@ services:
       MYSQL_USER: todo
       MYSQL_PASSWORD: password
   app:
+    image: 002348689794.dkr.ecr.us-east-1.amazonaws.com/pdcspb/todobackend:${APP_VERSION}
     extends:
       service: release
     depends_on:
