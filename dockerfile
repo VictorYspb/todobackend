@@ -30,7 +30,7 @@ LABEL application=todobackend
 
 # Install operating system dependencies
 RUN apk add --no-cache python3 mariadb-client bash curl bats jq && \
-    pip3 install --no-cache awscli
+    pip3 install --no-cache-dir awscli
 
 # Create app user
 RUN addgroup -g 1000 app && \
